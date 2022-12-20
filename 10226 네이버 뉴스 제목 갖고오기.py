@@ -11,15 +11,21 @@ source_data = site.text
 
 count = source_data.count('<tr class="view')
 
-for i in range(count):
-       pos1 = source_data.find('top">') + len('top">')
-       source_data = source_data[pos1:]
+def count(*pos1, source_data, extract_data):
 
-       pos2 = source_data.find('</a>')
-       extract_data = source_data[:pos2]
+       for i in range(count):
+              pos1 = source_data.find('top">') + len('top">')
+              source_data = source_data[pos1:]
 
-       pos3 = source_data.find('<span')
-       source_data = source_data[pos3:]
+              pos2 = source_data.find('</a>')
+              extract_data = source_data[:pos2]
 
-       source_data = source_data[pos3+1:]
-       print(i+1, extract_data.strip())
+              pos3 = source_data.find('<span')
+              source_data = source_data[pos3:]
+
+              source_data = source_data[pos3+1:]
+              print(i+1, extract_data.strip())
+              
+              return count
+       
+       #쌤 어케 해여
