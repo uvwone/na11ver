@@ -11,7 +11,7 @@ source_data = site.text
 
 count = source_data.count('<tr class="view')
 
-def count(*pos1, source_data, extract_data):
+def count(*pos1, source_data, extract_data):     #이쪽에 pos1 
 
        for i in range(count):
               pos1 = source_data.find('top">') + len('top">')
